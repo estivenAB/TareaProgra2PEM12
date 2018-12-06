@@ -62,5 +62,47 @@ public class UsersList {
         }
     }
     
+    public void validateUserLogin(String id, String password){
+        
+        for (int i = 0; i < usersList.length; i++) {
+            if (usersList[i].getId().equalsIgnoreCase(id) == true && usersList[i].getPassword().equalsIgnoreCase(password) == true) {
+                
+            }else{
+                
+            }
+        }
+        
+    }
+    
+    public void validateUserSingOn(String id, String password){
+        
+        if (id.length() == 4) {
+            for (int i = 0; i < usersList.length; i++) {
+                if (usersList[i].getId().equalsIgnoreCase(id) == true) {
+                    
+                }else{
+                    
+                }
+            }
+        }else{
+            
+        }
+        
+        if (password.length()==3) {
+            for (int i = 0; i < usersList.length; i++) {
+                if (usersList[i].getPassword().equalsIgnoreCase(password)==true) {
+                    
+                }else{
+                    
+                }
+            }
+        }else{
+            
+        }
+        
+        
+    }
+    
+    
     
 }
