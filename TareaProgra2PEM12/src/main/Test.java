@@ -1,5 +1,7 @@
 package main;
 
+import Interaction.Welcome;
+
 /**
  *
  * @author Estiven Álvarez
@@ -14,6 +16,9 @@ public class Test {
         ///HOLI AMIGUITOS! :)PERO POR QUÉ ESA WILA TIENE ESE (){.}() ASI AHHHHH?????? mmm
         //Priscila.
         //ME PICA UN HUEVITO
+        
+        Welcome start = new Welcome();
+        start.setVisible(true);
     }
     
 }
