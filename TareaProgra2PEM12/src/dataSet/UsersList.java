@@ -1,6 +1,10 @@
-
 package dataSet;
 
+import exceptions.IDSizeException;
+import exceptions.NotExistException;
+import exceptions.PasswordSizeException;
+import exceptions.SameIDException;
+import exceptions.SamePasswordException;
 import models.User;
 
 /**
@@ -8,13 +12,14 @@ import models.User;
  * @author Estiven Álvarez
  * @author Priscila Castro
  * @author Maikol Lizano
- * 
+ *
  * @version 05 diciembre, 2018
  */
 public class UsersList {
-    
+
     private User[] usersList;
     private int counter;
+    private User user;
 
     public UsersList(User[] usersList) {
         this.usersList = usersList;
@@ -32,8 +37,8 @@ public class UsersList {
     public String toString() {
         return "UsersList{" + "usersList=" + usersList + '}';
     }
-    
-    public void addUser (User userToAdd){
+
+    public void addUser(User userToAdd) {
         if (userToAdd != null) {
             if (counter == usersList.length) {
                 enlargeList(usersList);
@@ -41,68 +46,68 @@ public class UsersList {
             if (counter == 0) {
                 usersList[0] = userToAdd;
                 counter++;
-            }else{
+            } else {
                 for (int i = counter; i >= 0; i--) {
                     usersList[i + 1] = usersList[i];
                 }
                 usersList[0] = userToAdd;
                 counter++;
             }
-            
+
         }
     }
-    
-    public void enlargeList(User[] userList){
+
+    public void enlargeList(User[] userList) {
         if (counter >= userList.length) {
-            User[] auxUserList = new User[userList.length+1];
+            User[] auxUserList = new User[userList.length + 1];
             for (int i = 0; i < userList.length; i++) {
                 auxUserList[i] = userList[i];
             }
             auxUserList = userList;
         }
     }
-    
-    public void validateUserLogin(String id, String password){
-        
-        for (int i = 0; i < usersList.length; i++) {
-            if (usersList[i].getId().equalsIgnoreCase(id) == true && usersList[i].getPassword().equalsIgnoreCase(password) == true) {
-                
-            }else{
-                
-            }
-        }
-        
-    }
-    
-    public void validateUserSingOn(String id, String password){
-        
-        if (id.length() == 4) {
+
+    public void validateUserLogin(String id, String password) throws Exception {
+        try {
             for (int i = 0; i < usersList.length; i++) {
-                if (usersList[i].getId().equalsIgnoreCase(id) == true) {
-                    
-                }else{
-                    
+                if (usersList[i].getId().equalsIgnoreCase(id) == true && usersList[i].getPassword().equalsIgnoreCase(password) == true) {
+                    break;
                 }
             }
-        }else{
-            
+        } catch (Exception ex) {
+            System.err.println(ex.getMessage());
         }
-        
-        if (password.length()==3) {
+
+    }
+
+    public void validateUserSingOn(String id, String password) throws Exception {
+
+        try {
             for (int i = 0; i < usersList.length; i++) {
-                if (usersList[i].getPassword().equalsIgnoreCase(password)==true) {
-                    
-                }else{
-                    
+                if (usersList[i].getId().equalsIgnoreCase(id) == false) {
+                    try {
+                        user.setId(id);
+                    } catch (IDSizeException ex) {
+                        System.err.println(ex.getMessage());
+                    }
                 }
             }
-        }else{
-            
+        } catch (SameIDException ex) {
+            System.err.println(ex.getMessage());
         }
-        
-        
+        try {
+            for (int i = 0; i < usersList.length; i++) {
+                if (usersList[i].getPassword().equalsIgnoreCase(password) == false) {
+                    try {
+                        user.setPassword(password);
+                    } catch (PasswordSizeException ex) {
+                        System.err.println(ex.getMessage());
+                    }
+                }
+            }
+        } catch (SamePasswordException ex) {
+            System.err.println(ex.getMessage());
+        }
     }
-    
-    
-    
+
 }

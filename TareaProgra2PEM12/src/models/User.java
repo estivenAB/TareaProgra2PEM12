@@ -1,12 +1,14 @@
-
 package models;
+
+import exceptions.IDSizeException;
+import exceptions.PasswordSizeException;
 
 /**
  *
  * @author Estiven
  */
 public class User {
-    
+
     private String id;
     private String password;
 
@@ -22,24 +24,29 @@ public class User {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(String id) throws Exception {
+        if (id.length() >= 4) {
+            this.id = id;
+        } else {
+            throw new IDSizeException();
+        }
     }
 
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String password) throws Exception {
+        if (password.length() >= 3) {
+            this.password = password;
+        } else {
+            throw new PasswordSizeException();
+        }
     }
 
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", password=" + password + '}';
     }
-    
-    
-    
-    
+
 }
