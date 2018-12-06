@@ -9,12 +9,12 @@ package view;
  *
  * @author Estiven
  */
-public class SelectLevels extends javax.swing.JFrame {
+public class SelectLevel extends javax.swing.JFrame {
 
     /**
      * Creates new form SelectLevels
      */
-    public SelectLevels() {
+    public SelectLevel() {
         initComponents();
     }
 
