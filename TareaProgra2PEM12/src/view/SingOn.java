@@ -1,21 +1,21 @@
-package view;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package view;
 
 /**
  *
  * @author prica
  */
-public class SingOn extends javax.swing.JFrame {
+public class SingOn extends javax.swing.JDialog {
 
     /**
      * Creates new form SingOn
      */
     public SingOn(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
         setLocationRelativeTo(parent);
     }
@@ -29,83 +29,102 @@ public class SingOn extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbSingOn = new javax.swing.JLabel();
-        tfSingOn = new javax.swing.JTextField();
-        lbPassword = new javax.swing.JLabel();
-        pfPassword = new javax.swing.JPasswordField();
+        lbID = new javax.swing.JLabel();
+        tfID = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        btBack = new javax.swing.JButton();
         btNext = new javax.swing.JButton();
+        pfPassword = new javax.swing.JPasswordField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lbSingOn.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
-        lbSingOn.setText("Crear un ID con al menos 4 caracteres: ");
+        lbID.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
+        lbID.setText("Crear un ID con al menos 4 caracteres");
 
-        tfSingOn.addActionListener(new java.awt.event.ActionListener() {
+        jLabel1.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
+        jLabel1.setText("Crear una contraseña con al menos 3 caracteres");
+
+        btBack.setFont(new java.awt.Font("Algerian", 0, 12)); // NOI18N
+        btBack.setText("Regresar");
+        btBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfSingOnActionPerformed(evt);
+                btBackActionPerformed(evt);
             }
         });
 
-        lbPassword.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
-        lbPassword.setText("Crear una contraseña con al menos 3 caracteres: ");
-
         btNext.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         btNext.setText("Siguiente");
+        btNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(173, 173, 173))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(tfSingOn, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(171, 171, 171))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btBack)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btNext))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(lbID))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(148, 148, 148)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btNext)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(88, 88, 88)
-                            .addComponent(lbSingOn))
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(45, 45, 45)
-                            .addComponent(lbPassword))))
-                .addGap(0, 49, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jLabel1)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(lbSingOn)
+                .addGap(35, 35, 35)
+                .addComponent(lbID)
                 .addGap(18, 18, 18)
-                .addComponent(tfSingOn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbPassword)
-                .addGap(18, 18, 18)
+                .addComponent(tfID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(31, 31, 31)
                 .addComponent(pfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(btNext)
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btBack)
+                    .addComponent(btNext))
                 .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tfSingOnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfSingOnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfSingOnActionPerformed
+    private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
+        dispose();
+    }//GEN-LAST:event_btBackActionPerformed
+
+    private void btNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNextActionPerformed
+        Instructions inst = new Instructions(this, true);
+        inst.setVisible(true);
+    }//GEN-LAST:event_btNextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btBack;
     private javax.swing.JButton btNext;
-    private javax.swing.JLabel lbPassword;
-    private javax.swing.JLabel lbSingOn;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lbID;
     private javax.swing.JPasswordField pfPassword;
-    private javax.swing.JTextField tfSingOn;
+    private javax.swing.JTextField tfID;
     // End of variables declaration//GEN-END:variables
 }

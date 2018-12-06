@@ -5,17 +5,21 @@
  */
 package view;
 
+import view.SelectLevel;
+
 /**
  *
- * @author Estiven
+ * @author prica
  */
-public class Instructions extends javax.swing.JFrame {
+public class Instructions extends javax.swing.JDialog {
 
     /**
      * Creates new form Instructions
      */
-    public Instructions() {
+    public Instructions(javax.swing.JDialog parent, boolean modal) {
+        super(parent, modal);
         initComponents();
+        setLocationRelativeTo(parent);
     }
 
     /**
@@ -29,24 +33,36 @@ public class Instructions extends javax.swing.JFrame {
 
         lbInstructions = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtDescriptions = new javax.swing.JTextArea();
+        jTextArea1 = new javax.swing.JTextArea();
+        btBack = new javax.swing.JButton();
         btNext = new javax.swing.JButton();
-        rbNoMoreInstructions = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lbInstructions.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
-        lbInstructions.setText("Instrucciones:");
+        lbInstructions.setText("Instrucciones: ");
 
-        txtDescriptions.setColumns(20);
-        txtDescriptions.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        txtDescriptions.setRows(5);
-        txtDescriptions.setText("-En el presente juego podrá elegir entre 4 niveles de dificultad.\n-Se le presentarán las pistas para las palabras horizontales y \nverticales respectivamente.\n-Cuenta con 3 intentos, al exceder este límite, se le devolverá a la \nventana para volver a elegir un nivel.\n-Dependiendo del nivel que elija, se le presentará un tipo de ayuda \nsegún la dificultad.\n-Debe ser cuidadoso y completar todos los espacios solicitados, \nde lo contrario se descontará un intento.\n-Puede optar por el botón de ayuda cuando sea posible, sin\nembargo, puede exceder el uso de este.\n");
-        jScrollPane1.setViewportView(txtDescriptions);
+        jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        jTextArea1.setRows(5);
+        jTextArea1.setText("-En el presente juego podrá elegir entre 4 niveles de dificultad.\n-Se le presentarán las pistas para las palabras horizontales y \nverticales respectivamente.\n-Cuenta con 3 intentos, al exceder este límite, se le devolverá a la \nventana para volver a elegir un nivel.\n-Dependiendo del nivel que elija, se le presentará un tipo de ayuda \nsegún la dificultad.\n-Debe ser cuidadoso y completar todos los espacios solicitados, \nde lo contrario se descontará un intento.\n-Puede optar por el botón de ayuda cuando sea posible, sin\nembargo, puede exceder el uso de este.\n");
+        jScrollPane1.setViewportView(jTextArea1);
 
+        btBack.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
+        btBack.setText("Regresar");
+        btBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btBackActionPerformed(evt);
+            }
+        });
+
+        btNext.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         btNext.setText("Siguiente");
-
-        rbNoMoreInstructions.setText("No volver a mostrar esta ventana.");
+        btNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNextActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,15 +71,15 @@ public class Instructions extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lbInstructions)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(rbNoMoreInstructions)
+                        .addComponent(btBack)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btNext)))
+                        .addComponent(btNext))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbInstructions)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 88, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -71,25 +87,33 @@ public class Instructions extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbInstructions)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btNext)
-                    .addComponent(rbNoMoreInstructions))
-                .addContainerGap())
+                    .addComponent(btBack)
+                    .addComponent(btNext))
+                .addGap(23, 23, 23))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btBackActionPerformed
+        dispose();
+    }//GEN-LAST:event_btBackActionPerformed
+
+    private void btNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNextActionPerformed
+        SelectLevel selev = new SelectLevel(this, true);
+        selev.setVisible(true);
+    }//GEN-LAST:event_btNextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btBack;
     private javax.swing.JButton btNext;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbInstructions;
-    private javax.swing.JRadioButton rbNoMoreInstructions;
-    private javax.swing.JTextArea txtDescriptions;
     // End of variables declaration//GEN-END:variables
 }
