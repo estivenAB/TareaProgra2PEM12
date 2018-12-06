@@ -1,6 +1,6 @@
 package main;
 
-import Interaction.Welcome;
+import view.Welcome;
 
 /**
  *
