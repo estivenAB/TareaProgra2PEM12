@@ -30,75 +30,70 @@ public class SelectLevels extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup7 = new javax.swing.ButtonGroup();
         lbSelectLevel = new javax.swing.JLabel();
-        cbSelectEasy = new javax.swing.JCheckBox();
-        cbSelectMedium = new javax.swing.JCheckBox();
-        cbSelectHard = new javax.swing.JCheckBox();
-        cbSelectTooHard = new javax.swing.JCheckBox();
         btNext = new javax.swing.JButton();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lbSelectLevel.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         lbSelectLevel.setText("Seleccione el nivel de dificultad:");
 
-        cbSelectEasy.setText("FÁCIL: palabras entre 2 - 6 caracteres. Entre 5 - 9 palabras.");
-
-        cbSelectMedium.setText("MEDIO: palabras entre 3 - 7 caracteres. Entre 10 - 14 palabras ");
-        cbSelectMedium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbSelectMediumActionPerformed(evt);
-            }
-        });
-
-        cbSelectHard.setText("DIFÍCIL: palabras entre 4 - 8 caracteres. Entre 15 - 19 palabras.");
-
-        cbSelectTooHard.setText("MUY DIFÍCIL: palabras entre 5 - 10 caracteres. Entre 20 - 25 palabras.");
-
         btNext.setText("Siguiente");
+
+        jRadioButton1.setText("FÁCIL: palabras entre 2 - 6 caracteres. Entre 5 - 9 palabras.");
+
+        jRadioButton2.setText("MEDIO: palabras entre 3 - 7 caracteres. Entre 10 - 14 palabras ");
+
+        jRadioButton3.setText("DIFÍCIL: palabras entre 4 - 8 caracteres. Entre 15 - 19 palabras.");
+
+        jRadioButton4.setText("MUY DIFÍCIL: palabras entre 5 - 10 caracteres. Entre 20 - 25 palabras.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cbSelectEasy, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbSelectTooHard)
-                    .addComponent(lbSelectLevel)
-                    .addComponent(cbSelectHard)
-                    .addComponent(cbSelectMedium))
-                .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btNext)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton1)
+                    .addComponent(lbSelectLevel))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbSelectLevel)
-                .addGap(18, 18, 18)
-                .addComponent(cbSelectEasy, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbSelectMedium, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbSelectHard, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cbSelectTooHard, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btNext)
                 .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cbSelectMediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSelectMediumActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cbSelectMediumActionPerformed
 
   
 
@@ -107,10 +102,14 @@ public class SelectLevels extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
-    private javax.swing.JCheckBox cbSelectEasy;
-    private javax.swing.JCheckBox cbSelectHard;
-    private javax.swing.JCheckBox cbSelectMedium;
-    private javax.swing.JCheckBox cbSelectTooHard;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup7;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JLabel lbSelectLevel;
     // End of variables declaration//GEN-END:variables
 }
