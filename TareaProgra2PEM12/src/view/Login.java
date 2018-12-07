@@ -37,6 +37,11 @@ public class Login extends javax.swing.JDialog {
         pfPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         lbID.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         lbID.setText("Ingrese su ID: ");
@@ -124,6 +129,10 @@ public class Login extends javax.swing.JDialog {
     private void pfPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pfPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pfPasswordActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        dispose();
+    }//GEN-LAST:event_formWindowClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

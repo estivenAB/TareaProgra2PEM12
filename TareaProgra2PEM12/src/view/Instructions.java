@@ -37,6 +37,11 @@ public class Instructions extends javax.swing.JDialog {
         btNext = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         lbInstructions.setFont(new java.awt.Font("Algerian", 0, 18)); // NOI18N
         lbInstructions.setText("Instrucciones: ");
@@ -106,6 +111,10 @@ public class Instructions extends javax.swing.JDialog {
         SelectLevel selev = new SelectLevel(this, true);
         selev.setVisible(true);
     }//GEN-LAST:event_btNextActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        dispose();
+    }//GEN-LAST:event_formWindowClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

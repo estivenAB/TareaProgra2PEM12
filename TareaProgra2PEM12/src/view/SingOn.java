@@ -36,6 +36,11 @@ public class SingOn extends javax.swing.JDialog {
         pfPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         lbID.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         lbID.setText("Crear un ID con al menos 4 caracteres");
@@ -116,6 +121,10 @@ public class SingOn extends javax.swing.JDialog {
         Instructions inst = new Instructions(this, true);
         inst.setVisible(true);
     }//GEN-LAST:event_btNextActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        dispose();
+    }//GEN-LAST:event_formWindowClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
