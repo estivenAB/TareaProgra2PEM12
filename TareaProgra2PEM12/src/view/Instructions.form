@@ -28,7 +28,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="btBack" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="277" max="32767" attributes="0"/>
                       <Component id="btNext" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -36,7 +36,7 @@
                           <Component id="lbInstructions" min="-2" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" alignment="0" min="-2" pref="397" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="0" pref="88" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -48,9 +48,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lbInstructions" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace pref="31" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="268" max="-2" attributes="0"/>
-              <EmptySpace pref="24" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btBack" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btNext" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -83,7 +83,7 @@
               <Font name="Monospaced" size="14" style="0"/>
             </Property>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="-En el presente juego podr&#xe1; elegir entre 4 niveles de dificultad.&#xa;-Se le presentar&#xe1;n las pistas para las palabras horizontales y &#xa;verticales respectivamente.&#xa;-Cuenta con 3 intentos, al exceder este l&#xed;mite, se le devolver&#xe1; a la &#xa;ventana para volver a elegir un nivel.&#xa;-Dependiendo del nivel que elija, se le presentar&#xe1; un tipo de ayuda &#xa;seg&#xfa;n la dificultad.&#xa;-Debe ser cuidadoso y completar todos los espacios solicitados, &#xa;de lo contrario se descontar&#xe1; un intento.&#xa;-Puede optar por el bot&#xf3;n de ayuda cuando sea posible, sin&#xa;embargo, puede exceder el uso de este.&#xa;"/>
+            <Property name="text" type="java.lang.String" value="-En el presente juego podr&#xe1; elegir entre 4 niveles de dificultad.&#xa;-Se le presentar&#xe1;n las pistas para las palabras horizontales y &#xa;verticales respectivamente.&#xa;-Cuenta con 3 intentos, al exceder este l&#xed;mite, se le devolver&#xe1; a la &#xa;ventana para volver a elegir un nivel.&#xa;-Dependiendo del nivel que elija, se le presentar&#xe1; un tipo de ayuda &#xa;seg&#xfa;n la dificultad.&#xa;-Debe ser cuidadoso y completar todos los espacios solicitados, &#xa;de lo contrario se descontar&#xe1; un intento.&#xa;-Puede optar por el bot&#xf3;n de ayuda cuando sea posible, sin&#xa;embargo, puede exceder el uso de este.&#xa;-Solo se permite el uso de letras, no debe ingresar las tildes.&#xa;"/>
           </Properties>
         </Component>
       </SubComponents>

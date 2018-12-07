@@ -45,7 +45,7 @@ public class Instructions extends javax.swing.JDialog {
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
-        jTextArea1.setText("-En el presente juego podrá elegir entre 4 niveles de dificultad.\n-Se le presentarán las pistas para las palabras horizontales y \nverticales respectivamente.\n-Cuenta con 3 intentos, al exceder este límite, se le devolverá a la \nventana para volver a elegir un nivel.\n-Dependiendo del nivel que elija, se le presentará un tipo de ayuda \nsegún la dificultad.\n-Debe ser cuidadoso y completar todos los espacios solicitados, \nde lo contrario se descontará un intento.\n-Puede optar por el botón de ayuda cuando sea posible, sin\nembargo, puede exceder el uso de este.\n");
+        jTextArea1.setText("-En el presente juego podrá elegir entre 4 niveles de dificultad.\n-Se le presentarán las pistas para las palabras horizontales y \nverticales respectivamente.\n-Cuenta con 3 intentos, al exceder este límite, se le devolverá a la \nventana para volver a elegir un nivel.\n-Dependiendo del nivel que elija, se le presentará un tipo de ayuda \nsegún la dificultad.\n-Debe ser cuidadoso y completar todos los espacios solicitados, \nde lo contrario se descontará un intento.\n-Puede optar por el botón de ayuda cuando sea posible, sin\nembargo, puede exceder el uso de este.\n-Solo se permite el uso de letras, no debe ingresar las tildes.\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         btBack.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
@@ -73,13 +73,13 @@ public class Instructions extends javax.swing.JDialog {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btBack)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
                         .addComponent(btNext))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lbInstructions)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 88, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -87,9 +87,9 @@ public class Instructions extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lbInstructions)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btBack)
                     .addComponent(btNext))
