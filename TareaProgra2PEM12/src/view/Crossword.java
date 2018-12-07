@@ -3,7 +3,8 @@ package view;
 import dataSet.StringMatrix;
 import java.awt.GridLayout;
 import java.awt.event.KeyEvent;
-import models.TextFieldChar;
+import models.Cell;
+import models.GridTextFile;
 
 /**
  *
@@ -16,7 +17,7 @@ import models.TextFieldChar;
 public class Crossword extends javax.swing.JDialog {
     
     private StringMatrix array;
-    private char a;
+    private Cell cell;
 
     /**
      * Creates new form Crossword
@@ -27,7 +28,7 @@ public class Crossword extends javax.swing.JDialog {
 
         setLocationRelativeTo(parent);
         initPanel();
-        a = array.getLetter(0, 0);
+        cell = array.getLetter(0, 0);
     }
     
     private void initPanel(){
@@ -38,13 +39,13 @@ public class Crossword extends javax.swing.JDialog {
         
         for(int i = 0; i < array.getCounter(); i++){
             for(int j = 0; j < array.getCounter(); j++){
-                TextFieldChar newTextFieldChar = new TextFieldChar(array.getLetter(i, j));
-                pnCrossword.add(newTextFieldChar);
-                newTextFieldChar.addKeyListener(new java.awt.event.KeyListener() {
+                GridTextFile newGridTextFile = new GridTextFile(array.getLetter(i, j));
+                pnCrossword.add(newGridTextFile);
+                newGridTextFile.addKeyListener(new java.awt.event.KeyListener() {
                     @Override
                     public void keyTyped(KeyEvent e) {
-                        if(e.getKeyChar() == newTextFieldChar.getString()){
-                            a = newTextFieldChar.getString();
+                        if(e.getKeyChar() == newGridTextFile.getFocusAccelerator()){
+                            cell = newGridTextFile.getCell();
                         }
                     }
                     @Override
@@ -61,22 +62,11 @@ public class Crossword extends javax.swing.JDialog {
         }
     }
     
-
-//        for (int i = 0; i < dishList.getProductCounter(); i++) {
-//            GridButtom newGridButtom = new GridButtom(dishList.getProduct(i));
-//            pnDishes.add(newGridButtom);
-//            newGridButtom.addActionListener(new java.awt.event.ActionListener() {
-//                public void actionPerformed(java.awt.event.ActionEvent evt) {
-//                    if (evt.getSource() == newGridButtom) {
-//                        product = newGridButtom.getProduct();
-//                        Icon icon = new ImageIcon(getClass().getResource(
-//                                "/img/" + product.getImageName()));
-//                        lbImage.setIcon(icon);
-//                    }
-//                }
-//            });
-//        }
-//    }
+    public Cell getChar(){
+        return cell;
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

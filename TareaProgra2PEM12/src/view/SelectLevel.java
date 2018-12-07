@@ -1,5 +1,7 @@
 package view;
 
+import models.Cell;
+
 /**
  *
  * @author Estiven Álvarez
@@ -10,6 +12,7 @@ package view;
  */
 public class SelectLevel extends javax.swing.JDialog {
 
+    
     /**
      * Creates new form SelectLevel
      */
@@ -163,6 +166,8 @@ public class SelectLevel extends javax.swing.JDialog {
     private void btNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNextActionPerformed
         Crossword crossword = new Crossword(this, true);
         crossword.setVisible(true);
+        Cell letter = crossword.getChar();
+        
     }//GEN-LAST:event_btNextActionPerformed
 
 

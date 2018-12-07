@@ -5,20 +5,22 @@
  */
 package dataSet;
 
+import models.Cell;
+
 /**
  *
  * @author prica
  */
 public class StringMatrix {
-    private char[][] array;
+    private Cell[][] array;
     private int counter;
-    private char letter;
+    private Cell letter;
 
     public StringMatrix() {
-        array = new char[10][10];
+        array = new Cell[10][10];
     }
 
-    public StringMatrix(char[][] array) {
+    public StringMatrix(Cell[][] array) {
         this.array = array;
         this.counter = counter;
         this.letter = letter;
@@ -32,11 +34,11 @@ public class StringMatrix {
         this.counter = counter;
     }
 
-    public char getLetter(int index1, int index2) {
+    public Cell getLetter(int index1, int index2) {
         return array[index1][index2];
     }
 
-    public void setLetter(char letter) {
+    public void setLetter(Cell letter) {
         this.letter = letter;
     }
     
