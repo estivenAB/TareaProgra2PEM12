@@ -1,15 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
 
 import java.awt.GridLayout;
 
 /**
  *
- * @author prica
+ * @author Estiven Álvarez
+ * @author Priscila Castro
+ * @author Maikol Lizano
+ *
+ * @version 05 diciembre, 2018
  */
 public class Crossword extends javax.swing.JDialog {
 
@@ -19,11 +18,10 @@ public class Crossword extends javax.swing.JDialog {
     public Crossword(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         setLocationRelativeTo(parent);
 //        initPanel();
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
