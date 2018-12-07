@@ -21,10 +21,28 @@ public class UsersList {
     private int counter;
     private User user;
 
-    public UsersList(User[] usersList) {
+    public UsersList(User[] usersList, int counter, User user) {
         this.usersList = usersList;
+        this.counter = counter;
+        this.user = user;
     }
 
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
     public User[] getUsersList() {
         return usersList;
     }
