@@ -1,5 +1,6 @@
 package main;
 
+import models.User;
 import view.Welcome;
 
 /**
@@ -16,6 +17,7 @@ public class Test {
 
         Welcome start = new Welcome();
         start.setVisible(true);
+
     }
 
 }

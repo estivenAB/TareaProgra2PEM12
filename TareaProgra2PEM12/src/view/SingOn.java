@@ -1,5 +1,7 @@
 package view;
 
+import models.User;
+
 /**
  *
  * @author Estiven Álvarez
@@ -44,6 +46,12 @@ public class SingOn extends javax.swing.JDialog {
 
         lbID.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         lbID.setText("Crear un ID con al menos 4 caracteres");
+
+        tfID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfIDActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         jLabel1.setText("Crear una contraseña con al menos 3 caracteres");
@@ -125,6 +133,11 @@ public class SingOn extends javax.swing.JDialog {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         dispose();
     }//GEN-LAST:event_formWindowClosing
+
+    private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
+        User user = new User();
+        user.setId(evt);
+    }//GEN-LAST:event_tfIDActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -2,6 +2,7 @@ package models;
 
 import exceptions.IDSizeException;
 import exceptions.PasswordSizeException;
+import java.awt.event.ActionEvent;
 
 /**
  *
@@ -51,6 +52,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" + "id=" + id + ", password=" + password + '}';
+    }
+
+    public void setId(ActionEvent evt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
