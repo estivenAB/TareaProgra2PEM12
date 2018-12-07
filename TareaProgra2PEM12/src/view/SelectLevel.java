@@ -58,10 +58,20 @@ public class SelectLevel extends javax.swing.JDialog {
 
         btNext.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         btNext.setText("Siguiente");
+        btNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btNextActionPerformed(evt);
+            }
+        });
 
         groupDifficulty.add(rbEasy);
         rbEasy.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
         rbEasy.setText("FÁCIL: palabras entre 2 - 6 caracteres. Entre 5 - 9 palabras.");
+        rbEasy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbEasyActionPerformed(evt);
+            }
+        });
 
         groupDifficulty.add(rbMedium);
         rbMedium.setFont(new java.awt.Font("Monospaced", 0, 12)); // NOI18N
@@ -145,6 +155,15 @@ public class SelectLevel extends javax.swing.JDialog {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         dispose();
     }//GEN-LAST:event_formWindowClosing
+
+    private void rbEasyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbEasyActionPerformed
+
+    }//GEN-LAST:event_rbEasyActionPerformed
+
+    private void btNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btNextActionPerformed
+        Crossword crossword = new Crossword(this, true);
+        crossword.setVisible(true);
+    }//GEN-LAST:event_btNextActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

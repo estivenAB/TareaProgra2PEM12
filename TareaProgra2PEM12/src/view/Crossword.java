@@ -1,6 +1,9 @@
 package view;
 
+import dataSet.StringMatrix;
 import java.awt.GridLayout;
+import java.awt.event.KeyEvent;
+import models.TextFieldChar;
 
 /**
  *
@@ -11,17 +14,69 @@ import java.awt.GridLayout;
  * @version 05 diciembre, 2018
  */
 public class Crossword extends javax.swing.JDialog {
+    
+    private StringMatrix array;
+    private char a;
 
     /**
      * Creates new form Crossword
      */
-    public Crossword(java.awt.Frame parent, boolean modal) {
+    public Crossword(javax.swing.JDialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
 
         setLocationRelativeTo(parent);
-//        initPanel();
+        initPanel();
+        a = array.getLetter(0, 0);
     }
+    
+    private void initPanel(){
+        int cols = 5;
+        int rows = 5;
+        GridLayout grid = new GridLayout(rows, cols);
+        pnCrossword.setLayout(grid);
+        
+        for(int i = 0; i < array.getCounter(); i++){
+            for(int j = 0; j < array.getCounter(); j++){
+                TextFieldChar newTextFieldChar = new TextFieldChar(array.getLetter(i, j));
+                pnCrossword.add(newTextFieldChar);
+                newTextFieldChar.addKeyListener(new java.awt.event.KeyListener() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        if(e.getKeyChar() == newTextFieldChar.getString()){
+                            a = newTextFieldChar.getString();
+                        }
+                    }
+                    @Override
+                    public void keyPressed(KeyEvent e) {
+                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
+
+                    @Override
+                    public void keyReleased(KeyEvent e) {
+                        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+                    }
+                });
+            }
+        }
+    }
+    
+
+//        for (int i = 0; i < dishList.getProductCounter(); i++) {
+//            GridButtom newGridButtom = new GridButtom(dishList.getProduct(i));
+//            pnDishes.add(newGridButtom);
+//            newGridButtom.addActionListener(new java.awt.event.ActionListener() {
+//                public void actionPerformed(java.awt.event.ActionEvent evt) {
+//                    if (evt.getSource() == newGridButtom) {
+//                        product = newGridButtom.getProduct();
+//                        Icon icon = new ImageIcon(getClass().getResource(
+//                                "/img/" + product.getImageName()));
+//                        lbImage.setIcon(icon);
+//                    }
+//                }
+//            });
+//        }
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +93,11 @@ public class Crossword extends javax.swing.JDialog {
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 formWindowClosing(evt);
+            }
+        });
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                formKeyTyped(evt);
             }
         });
 
@@ -75,6 +135,10 @@ public class Crossword extends javax.swing.JDialog {
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         dispose();
     }//GEN-LAST:event_formWindowClosing
+
+    private void formKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

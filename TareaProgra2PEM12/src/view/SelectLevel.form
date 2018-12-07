@@ -99,6 +99,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Siguiente"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btNextActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
 
@@ -142,6 +145,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="F&#xc1;CIL: palabras entre 2 - 6 caracteres. Entre 5 - 9 palabras."/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbEasyActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JRadioButton" name="rbMedium">
           <Properties>
