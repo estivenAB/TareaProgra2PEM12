@@ -47,6 +47,11 @@ public class SingOn extends javax.swing.JDialog {
         lbID.setFont(new java.awt.Font("Algerian", 0, 14)); // NOI18N
         lbID.setText("Crear un ID con al menos 4 caracteres");
 
+        tfID.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                tfIDComponentAdded(evt);
+            }
+        });
         tfID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfIDActionPerformed(evt);
@@ -135,9 +140,13 @@ public class SingOn extends javax.swing.JDialog {
     }//GEN-LAST:event_formWindowClosing
 
     private void tfIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfIDActionPerformed
+        
+    }//GEN-LAST:event_tfIDActionPerformed
+
+    private void tfIDComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_tfIDComponentAdded
         User user = new User();
         user.setId(evt);
-    }//GEN-LAST:event_tfIDActionPerformed
+    }//GEN-LAST:event_tfIDComponentAdded
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

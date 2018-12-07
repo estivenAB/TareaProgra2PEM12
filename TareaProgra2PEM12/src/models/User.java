@@ -3,6 +3,7 @@ package models;
 import exceptions.IDSizeException;
 import exceptions.PasswordSizeException;
 import java.awt.event.ActionEvent;
+import java.awt.event.ContainerEvent;
 
 /**
  *
@@ -55,6 +56,10 @@ public class User {
     }
 
     public void setId(ActionEvent evt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setId(ContainerEvent evt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
