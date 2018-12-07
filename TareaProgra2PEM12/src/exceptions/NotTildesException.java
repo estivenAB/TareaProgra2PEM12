@@ -19,6 +19,6 @@ public class NotTildesException extends Exception {
      * @param msg recibe un mensaje para ser interpretado.
      */
     public NotTildesException(String msg) {
-        super(msg);
+        super("No se permite el uso de tildes, inténtelo nuevamente.");
     }
 }

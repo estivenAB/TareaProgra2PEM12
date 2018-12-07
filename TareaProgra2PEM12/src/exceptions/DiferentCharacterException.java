@@ -19,6 +19,6 @@ public class DiferentCharacterException extends Exception {
      * @param msg recibe un mensaje para ser interpretado.
      */
     public DiferentCharacterException(String msg) {
-        super(msg);
+        super("No se permite el uso de caracteres distintos a letras, ni implementar dos letres en un solo espacio.");
     }
 }
